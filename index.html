@@ -81,32 +81,77 @@
   <div id="app-11">
   </div>
 
-  <!-- Template Syntax -->
-<div id="app-12">
-  <h4>Template Syntax</h4>
-  <!-- Text -->
-  <p><span>Message: {{ msg }}</span></p>
-  <p><span v-once>This will never change: {{ msg }}</span></p>
-  <button v-on:click="msg = 'Changed'">Change it</button>
+<!-- Template Syntax :- -->
+<h3>Template Syntax</h3>
+  <!-- Interpolations :- -->
+  <div id="app-12">
+    <h4>Interpolations</h4>
+    <!-- Text -->
+    <p><span>Message: {{ msg }}</span></p>
+    <p><span v-once>This will never change: {{ msg }}</span></p>
+    <button v-on:click="msg = 'Changed'">Change it</button>
 
-  <!-- Raw HTML -->
-  <p>Using mustaches: {{ rawHtml }}</p>
-  <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+    <!-- Raw HTML -->
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
 
-  <!-- Attributes -->
-  <div v-bind:id="dynamicId">dynamicId</div>
-  <button v-bind:disabled="isButtonDisabled">Button</button>
+    <!-- Attributes -->
+    <div v-bind:id="dynamicId">dynamicId</div>
+    <button v-bind:disabled="isButtonDisabled">Button</button>
 
 
-  <!-- Using JavaScript Expressions -->
-  <p>{{ number + 1 }}</p>
+    <!-- Using JavaScript Expressions -->
+    <p>{{ number + 1 }}</p>
 
-  <p>{{ ok ? 'YES' : 'NO' }}</p>
+    <p>{{ ok ? 'YES' : 'NO' }}</p>
 
-  <p>{{ message.split('').reverse().join('') }}</p>
+    <p>{{ message.split('').reverse().join('') }}</p>
 
-  <div v-bind:id="'list-' + id">List-{{ id }}</div>
-</div>
+    <div v-bind:id="'list-' + id">List-{{ id }}</div>
+
+  </div>
+
+  <!-- Directives :- -->
+  <div id="app-13">
+      <h4>Directives</h4>
+      <p v-if="seen">Now you see me</p> <!-- Here, the v-if directive would remove/insert the <p> element based on the truthiness of the value of the expression seen. -->
+
+      <!-- Arguments -->
+      <p><a v-bind:href="url"> Google </a></p> <!-- Some directives can take an “argument”, denoted by a colon after the directive name. For example, the v-bind directive is used to reactively update an HTML attribute: -->
+      <p><a v-on:click="doSomething"> doSomething(Hide Now you can see me) on click </a></p>
+      <p><a v-on:click="url='https://www.github.com'"> Change the above Google url </a></p>
+
+      <!-- Dynamic Arguments -->
+      <!-- When using in-DOM templates (templates directly written in an HTML file), you should also avoid naming keys with uppercase characters, as browsers will coerce attribute names into lowercase: -->
+      <p><a v-bind:[attributeName]="url"> Dynamic Attribute </a></p> <!-- This will be converted to v-bin [attributename] in in-DOM templates. Unless you have a "attributename" property in your instance, your code won't work. -->
+      <p><a v-on:[eventName]="doSomething"> doSomething(Hide Now you can see me) on click </a></p>
+
+      <!-- Modifiers -->
+      <form v-on:submit.prevent="onSubmit"> ... </form>
+  </div>
+
+  <!-- Shorthands -->
+    <div id="app-14">
+      <!-- v-bind Shorthand -->
+      <!-- full syntax -->
+      <p><a v-bind:href="url"> v-bind Full Syntax </a></p>
+
+      <!-- shorthand -->
+      <p><a :href="url"> v-bind Shorthand </a></p>
+
+      <!-- shorthand with dynamic argument (2.6.0+) -->
+      <p><a :[key]="url"> v-bind Shorthand with dynamic argument </a></p>
+
+    <!-- v-on Shorthand -->
+      <!-- full syntax -->
+      <p><a v-on:click="doSomething"> v-on Full Syntax (See Console)</a></p>
+
+      <!-- shorthand -->
+      <a @click="doSomething"> v-on Shorthand (See Console)</a>
+
+      <!-- shorthand with dynamic argument (2.6.0+) -->
+      <a @[event]="doSomething"> v-on Shorthand with dynamic argument (See Console)</a>
+    </div>
 
 
 

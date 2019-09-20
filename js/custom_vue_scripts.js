@@ -174,3 +174,34 @@ new Vue({
       id:3,
     }
   })
+  // Directives
+  new Vue({
+    el: '#app-13',
+    data: {
+      seen: true,
+      url: 'https://www.google.com',
+      attributename: 'href', //Instead of attributeName, attributename is here because in HTML part attributeName is converted to lowercase (attributename) by the browser
+      eventname: 'click'
+    },
+    methods: {
+        doSomething: function () {
+          this.seen = false
+      }
+    }
+  })
+
+  // Shorthands
+  new Vue({
+    el: '#app-14',
+    data: {
+      seen: true,
+      url: 'https://www.google.com',
+      key: 'href',
+      event: 'click'
+    },
+    methods: {
+        doSomething: function () {
+          console.log(this.seen)
+      }
+    }
+  })
