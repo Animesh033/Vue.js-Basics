@@ -152,6 +152,29 @@
       <!-- shorthand with dynamic argument (2.6.0+) -->
       <a @[event]="doSomething"> v-on Shorthand with dynamic argument (See Console)</a>
     </div>
+<!-- End Template Syntax :- -->
+
+<!-- Computed Properties and Watchers -->
+  <!-- Computed Properties -->
+  <div id="app-15">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+  </div>
+  <!-- Computed Caching vs Methods -->
+    <!-- Instead of a computed property, we can define the same function as a method. For the end result, the two approaches are indeed exactly the same. However, the difference is that computed properties are cached based on their reactive dependencies. A computed property will only re-evaluate when some of its reactive dependencies have changed.  -->
+
+
+  <!-- Computed vs Watched Property -->
+  <div id="demo">{{ fullName }}</div>
+
+  <!-- Watchers -->
+  <div id="watch-example">
+    <p>
+      Ask a yes/no question:
+      <input v-model="question">
+    </p>
+    <p>{{ answer }}</p>
+  </div>
 
 
 
@@ -160,8 +183,20 @@
 
 
 
+
+
+
+
+
+
+
+    
 
   <script src="js/vue.js"></script>
+  <!-- Watchers -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+  <!-- /Watchers -->
   <script src="js/custom_vue_scripts.js"></script>
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
