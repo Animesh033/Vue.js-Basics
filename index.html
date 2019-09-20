@@ -81,6 +81,32 @@
   <div id="app-11">
   </div>
 
+  <!-- Template Syntax -->
+<div id="app-12">
+  <h4>Template Syntax</h4>
+  <!-- Text -->
+  <p><span>Message: {{ msg }}</span></p>
+  <p><span v-once>This will never change: {{ msg }}</span></p>
+  <button v-on:click="msg = 'Changed'">Change it</button>
+
+  <!-- Raw HTML -->
+  <p>Using mustaches: {{ rawHtml }}</p>
+  <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+
+  <!-- Attributes -->
+  <div v-bind:id="dynamicId">dynamicId</div>
+  <button v-bind:disabled="isButtonDisabled">Button</button>
+
+
+  <!-- Using JavaScript Expressions -->
+  <p>{{ number + 1 }}</p>
+
+  <p>{{ ok ? 'YES' : 'NO' }}</p>
+
+  <p>{{ message.split('').reverse().join('') }}</p>
+
+  <div v-bind:id="'list-' + id">List-{{ id }}</div>
+</div>
 
 
 

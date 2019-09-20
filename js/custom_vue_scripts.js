@@ -158,3 +158,19 @@ new Vue({
 })
 // => "a is: 1"
   // There are also other hooks which will be called at different stages of the instance’s lifecycle, such as mounted, updated, and destroyed. All lifecycle hooks are called with their this context pointing to the Vue instance invoking it
+
+// Template Syntax :-
+  // Interpolations
+  new Vue({
+    el: '#app-12',
+    data: {
+      msg: 'Hi, This is Animesh From Bihar',
+      rawHtml: 'Using mustaches: <span style="color: red">This should be red.</span>',
+      dynamicId: 1,
+      isButtonDisabled: 'disabled',
+      number: 1,
+      ok: true,
+      message: 'Animesh Kumar',
+      id:3,
+    }
+  })
