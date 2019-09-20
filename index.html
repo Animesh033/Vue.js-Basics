@@ -67,7 +67,29 @@
     </ol>
   </div>
 
-  
+  <div id="app-8">
+    <p>Data = {{ a }}</p>
+  </div>
+  <div id="app-9">
+    <p>{{ foo }}</p>
+    <!-- this will no longer update `foo`! -->
+    <button v-on:click="foo = 'baz'">Change it</button>
+  </div>
+  <div id="app-10">
+    <button v-on:click="a = 'baz'">Change it</button>
+  </div> 
+  <div id="app-11">
+  </div>
+
+
+
+
+
+
+
+
+
+
   <script src="js/vue.js"></script>
   <script src="js/custom_vue_scripts.js"></script>
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
